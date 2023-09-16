@@ -299,3 +299,15 @@ names.reverse();
 
 let newd = names.filter((name) => name.startsWith('m'));
 console.log(newd);
+
+function NumbersStats(nums) {
+    this.nums = nums
+}
+
+let octoNums = new NumbersStats([1,2,3,4,5,6]);
+let strings = String(octoNums.nums);
+let resulstss = [];
+for (i of strings) {
+    if( i !== ',') resulstss.push(i);
+}
+console.log(resulstss);
