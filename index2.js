@@ -310,4 +310,36 @@ let resulstss = [];
 for (i of strings) {
     if( i !== ',') resulstss.push(i);
 }
-console.log(resulstss);
+
+
+var letterCombinations = function(digits) {
+    const letters = {
+        '2': ["a", "b", "c"],
+        '3': ['d','e','f'],
+        '4': ['g','h','i'],
+        '5': ['j','k','l'],
+        '6': ['m','n','o'],
+        '7': ['p','q','r','s'],
+        '8': ['t','u','v'],
+        '9': ['w','x','y','z']
+    };
+
+    let ans = [];
+    let total = digits.length;
+    for (let i = 0; i < total; i++) {
+        let remaining = total - (i+1);
+        let tempVal = '';
+        let letter = letters[digits[i]];
+        for (let y of letter) {
+            tempVal.push(y);
+            for (let rem = 0;rem < remaining; rem++) {
+                for 
+            }
+            ans.push(tempVal)
+        }
+
+    }
+    return ans;
+};
+
+let digits = '23';
