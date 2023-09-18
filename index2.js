@@ -290,7 +290,7 @@ function friendFinder(frie) {
     return ans;
 };
 
-console.log(friendFinder(friends));
+
 
 
 let names = ['tim', 'dave', 'tom', 'albert', 'molly', 'maria'];
@@ -304,42 +304,61 @@ function NumbersStats(nums) {
     this.nums = nums
 }
 
-let octoNums = new NumbersStats([1,2,3,4,5,6]);
-let strings = String(octoNums.nums);
-let resulstss = [];
-for (i of strings) {
-    if( i !== ',') resulstss.push(i);
-}
+// let octoNums = new NumbersStats([1,2,3,4,5,6]);
+// let strings = String(octoNums.nums);
+// let resulstss = [];
+// for (i of strings) {
+//     if( i !== ',') resulstss.push(i);
+// }
 
 
-var letterCombinations = function(digits) {
-    const letters = {
-        '2': ["a", "b", "c"],
-        '3': ['d','e','f'],
-        '4': ['g','h','i'],
-        '5': ['j','k','l'],
-        '6': ['m','n','o'],
-        '7': ['p','q','r','s'],
-        '8': ['t','u','v'],
-        '9': ['w','x','y','z']
-    };
+// var letterCombinations = function(digits) {
+//     const letters = {
+//         '2': ["a", "b", "c"],
+//         '3': ['d','e','f'],
+//         '4': ['g','h','i'],
+//         '5': ['j','k','l'],
+//         '6': ['m','n','o'],
+//         '7': ['p','q','r','s'],
+//         '8': ['t','u','v'],
+//         '9': ['w','x','y','z']
+//     };
 
-    let ans = [];
-    let total = digits.length;
-    for (let i = 0; i < total; i++) {
-        let remaining = total - (i+1);
-        let tempVal = '';
-        let letter = letters[digits[i]];
-        for (let y of letter) {
-            tempVal.push(y);
-            for (let rem = 0;rem < remaining; rem++) {
-                for 
+//     let ans = [];
+//     let total = digits.length;
+//     for (let i = 0; i < total; i++) {
+//         let remaining = total - (i+1);
+//         let tempVal = '';
+//         let letter = letters[digits[i]];
+//         for (let y of letter) {
+//             tempVal.push(y);
+//             for (let rem = 0;rem < remaining; rem++) {
+//                 for 
+//             }
+//             ans.push(tempVal)
+//         }
+
+//     }
+//     return ans;
+// };
+
+let digits = [2,3,4,[5,6,7,8,[9,4,5,4],5],7,3,[2,3,4],4];
+
+function flat(arr, n) {
+    if (n === 0) return arr;
+    let ans = arr;
+    for (let i = 0;i < n; i++) {
+        let ref = [];
+        for (let y of ans) {
+            if (y.length >= 2) {
+                for ( let z of y) ref.push(z);
+            } else {
+                ref.push(y);
             }
-            ans.push(tempVal)
         }
-
+        ans = ref;
     }
     return ans;
-};
+}
 
-let digits = '23';
+console.log(flat(digits,1));
